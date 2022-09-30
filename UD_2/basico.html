@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Meta-Informacion de la pagina-->
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+             //const --> daato fijo
+             //let --> dato variable
+
+           //Ej 1
+           /* alert("Escribe los siguientes datos");
+
+           let num1;
+           num1 = prompt("Escribe numero 1: ");
+           num1 = parseInt(num1);
+
+           let num2;
+           num2 = prompt("Escribe numero 2: ");
+           num2 = parseInt(num2);
+
+           let num3;
+           num3 = prompt("Escribe numero 3: ");
+           num3 = parseInt(num3);
+
+           let nombre;
+           nombre = prompt("Escribe nombre: ");
+           nombre = parseFloat(nombre);
+
+           let apellido;
+           apellido = prompt("Escribe apellido: ");
+           apellido = parseFloat(apellido);
+
+           console.log(num1, num2, num3, nombre, apellido);
+
+           document.write(`${num1} </br> ${num2} </br> ${num3} </br> ${nombre} </br> ${apellido}`);
+      */
+
+             //ej2
+
+             function lecturaDatos(){
+                 const num1 = parseInt(prompt("Escribe un numero 1: "));
+                 const num2 = parseInt(prompt("Escribe un número 2: "));
+                 const num3 = parseInt(prompt("Escribe un número 3: "));
+
+                 const nombre = prompt("Escribe un nombre: ");
+                 const apellido = prompt("Escribe un apellido: ");
+
+                 const suma = num1+num2+num3;
+                 const multiplicacion = num1*num2*num3;
+                 const division = num1/num3;
+
+                 console.log(`"Nombre y apellidos: ${nombre} ${apellido}`)
+                 console.log(`
+                 "Operaciones: "
+                 "Suma: " ${suma}+ ${suma} + ${suma} =${suma} 
+                 "Multiplicacion: " ${multiplicacion}
+                 "Division: " ${division}`)
+             }
+
+           // ej 9
+
+           /* alert("Tabla de multiplicar");
+
+           const nTabla = parseInt(prompt("Nº de tablas: "));
+           const nFilas = parseInt(prompt("Nº de filas: "));
+
+           let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
+
+           for (let i = 0; i <= nFilas; i++) {
+             let resultado = nTabla * i;
+             console.log(`${nTabla} x ${nFilas} = ${resultado}`);
+           }
+           document.write(textoHTML);
+
+           textoHTML += `</br> ${a} x ${i} = ${resultado}`;
+      */
+           // ej 14
+
+             function perimetroRectaangulo(base, altura) {
+             /* const base = 2;
+             const altura = 4; */
+
+             const perimetro = (base + altura) * 2;
+
+             console.log(perimetro);
+             return perimetro;
+
+             let perimetroRectangulo2 = function (base, altura) {
+               /* const base = 2;
+             const altura = 4; */
+
+               const perimetro = (base + altura) * 2;
+
+               console.log(perimetro);
+               return perimetro;
+             }
+             let perimetroRectangulo3 = (base,altura) => (base+altura)*2
+
+             let perimetroRectangulo4 = (base,altura) => (base>altura)
+             let perimetroRectangulo5 = (base,altura) => (base>altura)? "es mayor" : "es falso"
+
+           }
+    </script>
+  </body>
+</html>
