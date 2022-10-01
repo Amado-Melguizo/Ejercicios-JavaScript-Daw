@@ -7,102 +7,156 @@
   </head>
   <body>
     <script>
-             //const --> daato fijo
-             //let --> dato variable
-        //hola soy amado
-           //Ej 1
-           /* alert("Escribe los siguientes datos");
+      //const --> daato fijo
+      //let --> dato variable
 
-           let num1;
-           num1 = prompt("Escribe numero 1: ");
-           num1 = parseInt(num1);
+      //Ej 1
+      function TipologiaDatos() {
+        alert("Escribe los siguientes datos");
 
-           let num2;
-           num2 = prompt("Escribe numero 2: ");
-           num2 = parseInt(num2);
+        const num1 = parseInt(prompt("Escribe un numero 1: "));
+        const num2 = parseInt(prompt("Escribe un número 2: "));
+        const num3 = parseInt(prompt("Escribe un número 3: "));
 
-           let num3;
-           num3 = prompt("Escribe numero 3: ");
-           num3 = parseInt(num3);
+        const nombre = prompt("Escribe un nombre: ");
+        const apellido = prompt("Escribe un apellido: ");
 
-           let nombre;
-           nombre = prompt("Escribe nombre: ");
-           nombre = parseFloat(nombre);
+        console.log(num1, num2, num3, nombre, apellido);
+        document.write(
+          `${num1} </br> ${num2} </br> ${num3} </br> ${nombre} </br> ${apellido}`
+        );
+      }
 
-           let apellido;
-           apellido = prompt("Escribe apellido: ");
-           apellido = parseFloat(apellido);
+      //Ej2
 
-           console.log(num1, num2, num3, nombre, apellido);
+      function lecturaDatos() {
+        const num1 = parseInt(prompt("Escribe un numero 1: "));
+        const num2 = parseInt(prompt("Escribe un número 2: "));
+        const num3 = parseInt(prompt("Escribe un número 3: "));
 
-           document.write(`${num1} </br> ${num2} </br> ${num3} </br> ${nombre} </br> ${apellido}`);
+        const nombre = prompt("Escribe un nombre: ");
+        const apellido = prompt("Escribe un apellido: ");
+
+        const suma = num1 + num2 + num3;
+        const multiplicacion = num1 * num2 * num3;
+        const division = num1 / num3;
+
+        console.log(`"Nombre y apellidos: ${nombre} ${apellido}`);
+        console.log(`
+                      "Operaciones: "
+                      "Suma: " ${suma}+ ${suma} + ${suma} =${suma}
+                      "Multiplicacion: " ${multiplicacion}
+                      "Division: " ${division}`);
+      }
+
+      //  Ej 3
+      function fmayorque10(num1, num2, num3) {
+        /* const num1 = parseInt(prompt("Escribe un numero 1: "));
+             const num2 = parseInt(prompt("Escribe un número 2: "));
+             const num3 = parseInt(prompt("Escribe un número 3: "));
       */
+        if (num1 > 10) {
+          return console.log(num1, " es mayor que 10.");
+        }
+        if (num2 > 10) {
+          return console.log(num2, " es mayor que 10.");
+        }
+        if (num3 > 10) {
+          return console.log(num3, " es mayor que 10.");
+        } else {
+          return console.log("Ningún numero es mayor es 10.");
+        }
+      }
 
-             //ej2
+      // Ej 4.
+      let esNavidad = (dia, mes) =>
+        dia === 25 && mes === 12 ? "¡Es Navidad!" : "";
 
-             function lecturaDatos(){
-                 const num1 = parseInt(prompt("Escribe un numero 1: "));
-                 const num2 = parseInt(prompt("Escribe un número 2: "));
-                 const num3 = parseInt(prompt("Escribe un número 3: "));
+      // Ej 5.
 
-                 const nombre = prompt("Escribe un nombre: ");
-                 const apellido = prompt("Escribe un apellido: ");
+      let calcularSueldo = (sueldo, antiguedad) => {
+        if (sueldo < 500 && antiguedad >= 10) {
+          console.log("El sueldo es: ", sueldo * 3);
+        }
+        if (sueldo < 500 && antiguedad < 10) {
+          console.log("El sueldo es: ", sueldo * 2);
+        }
+        if (sueldo >= 500) {
+          console.log("El sueldo es: ", sueldo);
+        }
+      };
 
-                 const suma = num1+num2+num3;
-                 const multiplicacion = num1*num2*num3;
-                 const division = num1/num3;
+      // Ej 6.
 
-                 console.log(`"Nombre y apellidos: ${nombre} ${apellido}`)
-                 console.log(`
-                 "Operaciones: "
-                 "Suma: " ${suma}+ ${suma} + ${suma} =${suma} 
-                 "Multiplicacion: " ${multiplicacion}
-                 "Division: " ${division}`)
-             }
+      //PReguntar a agustin fallo de las comparativas.
+      // ver si se hace con && o |
 
-           // ej 9
+      let notas = (nota) => {
+        if (nota === 0 | nota < 3) {
+          console.log("Muy deficiente.");
+        }
+        if (nota === 3 | nota < 5) {
+          console.log("Insuficiente.");
+        }
+        if (nota === 5 | nota < 6) {
+          console.log("Bien.");
+        }
+        if (nota === 6 | nota < 9) {
+          console.log("Notable.");
+        }
+        if (nota >= 9 | nota === 10) {
+          console.log("Sobresaliente.");
+        } else {
+          console.log("Esa nota no es posible.");
+        }
+      };
 
-           /* alert("Tabla de multiplicar");
+      // Ej 7.
 
-           const nTabla = parseInt(prompt("Nº de tablas: "));
-           const nFilas = parseInt(prompt("Nº de filas: "));
+      let par = (num)=>{
+        while (condition) {
+          
+        }
+      }
 
-           let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
+      //  Ej 9.
 
-           for (let i = 0; i <= nFilas; i++) {
-             let resultado = nTabla * i;
-             console.log(`${nTabla} x ${nFilas} = ${resultado}`);
-           }
-           document.write(textoHTML);
+      /* alert("Tabla de multiplicar");
+                const nTabla = parseInt(prompt("Nº de tablas: "));
+                const nFilas = parseInt(prompt("Nº de filas: "));
+                let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
+                for (let i = 0; i <= nFilas; i++) {
+                  let resultado = nTabla * i;
+                  console.log(`${nTabla} x ${nFilas} = ${resultado}`);
+                }
+                document.write(textoHTML);
+                textoHTML += `</br> ${a} x ${i} = ${resultado}`;
+           */
+      //  Ej 14
 
-           textoHTML += `</br> ${a} x ${i} = ${resultado}`;
-      */
-           // ej 14
+      function perimetroRectangulo(base, altura) {
+        /* const base = 2;
+                  const altura = 4; */
 
-             function perimetroRectaangulo(base, altura) {
-             /* const base = 2;
-             const altura = 4; */
+        const perimetro = (base + altura) * 2;
 
-             const perimetro = (base + altura) * 2;
+        console.log(perimetro);
+        return perimetro;
 
-             console.log(perimetro);
-             return perimetro;
+        let perimetroRectangulo2 = function (base, altura) {
+          /* const base = 2;
+                  const altura = 4; */
 
-             let perimetroRectangulo2 = function (base, altura) {
-               /* const base = 2;
-             const altura = 4; */
+          const perimetro = (base + altura) * 2;
 
-               const perimetro = (base + altura) * 2;
-
-               console.log(perimetro);
-               return perimetro;
-             }
-             let perimetroRectangulo3 = (base,altura) => (base+altura)*2
-
-             let perimetroRectangulo4 = (base,altura) => (base>altura)
-             let perimetroRectangulo5 = (base,altura) => (base>altura)? "es mayor" : "es falso"
-
-           }
+          console.log(perimetro);
+          return perimetro;
+        };
+        let perimetroRectangulo3 = (base, altura) => (base + altura) * 2;
+        let perimetroRectangulo4 = (base, altura) => base > altura;
+        let perimetroRectangulo5 = (base, altura) =>
+          base > altura ? "es mayor" : "es falso";
+      }
     </script>
   </body>
 </html>
