@@ -3,9 +3,24 @@
 <html>
   <head>
     <!-- Meta-Informacion de la pagina-->
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <body>
+    <form>
+      <label>Texto a buscar</label>
+      <input
+        type="text"
+        name="texto"
+        placeholder="Escribe una palabra.."
+        onkeyup="search()"
+      />
+      <button type="submit">Enviar</button>
+      Buscar solo palabras completas<input type="checkbox" /> Distinguir entre
+      mayusculas y minusculas<input type="checkbox" />
+    </form>
+
     <script>
       //const --> daato fijo
       //let --> dato variable
@@ -43,18 +58,18 @@
 
         console.log(`"Nombre y apellidos: ${nombre} ${apellido}`);
         console.log(`
-                      "Operaciones: "
-                      "Suma: " ${suma}+ ${suma} + ${suma} =${suma}
-                      "Multiplicacion: " ${multiplicacion}
-                      "Division: " ${division}`);
+                                  "Operaciones: "
+                                  "Suma: " ${suma}+ ${suma} + ${suma} =${suma}
+                                  "Multiplicacion: " ${multiplicacion}
+                                  "Division: " ${division}`);
       }
 
       //  Ej 3
       function fmayorque10(num1, num2, num3) {
         /* const num1 = parseInt(prompt("Escribe un numero 1: "));
-             const num2 = parseInt(prompt("Escribe un número 2: "));
-             const num3 = parseInt(prompt("Escribe un número 3: "));
-      */
+                         const num2 = parseInt(prompt("Escribe un número 2: "));
+                         const num3 = parseInt(prompt("Escribe un número 3: "));
+                  */
         if (num1 > 10) {
           return console.log(num1, " es mayor que 10.");
         }
@@ -92,19 +107,19 @@
       // ver si se hace con && o |
 
       let notas = (nota) => {
-        if (nota === 0 | nota < 3) {
+        if (nota >= 0 && nota < 3) {
           console.log("Muy deficiente.");
         }
-        if (nota === 3 | nota < 5) {
+        if (nota === 3 && nota < 5) {
           console.log("Insuficiente.");
         }
-        if (nota === 5 | nota < 6) {
+        if (nota === 5 && nota < 6) {
           console.log("Bien.");
         }
-        if (nota === 6 | nota < 9) {
+        if (nota === 6 && nota < 9) {
           console.log("Notable.");
         }
-        if (nota >= 9 | nota === 10) {
+        if (nota >= 9 && nota === 10) {
           console.log("Sobresaliente.");
         } else {
           console.log("Esa nota no es posible.");
@@ -113,30 +128,48 @@
 
       // Ej 7.
 
-      let par = (num)=>{
-        while (condition) {
-          
-        }
-      }
+      let par = (num) => {
+        while (condition) {}
+      };
 
       //  Ej 9.
 
       /* alert("Tabla de multiplicar");
-                const nTabla = parseInt(prompt("Nº de tablas: "));
-                const nFilas = parseInt(prompt("Nº de filas: "));
-                let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
-                for (let i = 0; i <= nFilas; i++) {
-                  let resultado = nTabla * i;
-                  console.log(`${nTabla} x ${nFilas} = ${resultado}`);
-                }
-                document.write(textoHTML);
-                textoHTML += `</br> ${a} x ${i} = ${resultado}`;
-           */
-      //  Ej 14
+                            const nTabla = parseInt(prompt("Nº de tablas: "));
+                            const nFilas = parseInt(prompt("Nº de filas: "));
+                            let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
+                            for (let i = 0; i <= nFilas; i++) {
+                              let resultado = nTabla * i;
+                              console.log(`${nTabla} x ${nFilas} = ${resultado}`);
+                            }
+                            document.write(textoHTML);
+                            textoHTML += `</br> ${a} x ${i} = ${resultado}`;
+                       */
+
+      // Ej 10.
+
+      function leerNotas() {
+        let notas;
+        do {
+          notas = parseInt(
+            prompt("escribe numeros del 0 al 10 y acaba con -1: ")
+          );
+
+          //notas === 10 ? "SI" : "NO";
+
+          if (notas === 10) {
+            console.log("SI");
+          } else {
+            console.log("NO");
+          }
+        } while (notas !== -1);
+      }
+
+      //  Ej 14.
 
       function perimetroRectangulo(base, altura) {
         /* const base = 2;
-                  const altura = 4; */
+                              const altura = 4; */
 
         const perimetro = (base + altura) * 2;
 
@@ -145,7 +178,7 @@
 
         let perimetroRectangulo2 = function (base, altura) {
           /* const base = 2;
-                  const altura = 4; */
+                              const altura = 4; */
 
           const perimetro = (base + altura) * 2;
 
@@ -156,6 +189,107 @@
         let perimetroRectangulo4 = (base, altura) => base > altura;
         let perimetroRectangulo5 = (base, altura) =>
           base > altura ? "es mayor" : "es falso";
+      }
+
+      function letraDNI() {
+        const letras = [
+          "T",
+          "R",
+          "W",
+          "A",
+          "G",
+          "M",
+          "Y",
+          "F",
+          "P",
+          "D",
+          "X",
+          "B",
+          "N",
+          "J",
+          "Z",
+          "S",
+          "Q",
+          "V",
+          "H",
+          "L",
+          "C",
+          "K",
+          "E",
+        ];
+
+        const numDNI = parseInt(prompt("Escribe los numeros de tu DNI: "));
+        const letraDNI = parseInt(
+          prompt("Escribe la letra de tu DNI (En mayusculas): ")
+        );
+
+        console.log(numDNI, letraDNI);
+
+        do {
+          const realLetraDNI = letras[numDNI % 23];
+          if (realLetraDNI != letraDNI) {
+            alert("La letra o el número proporcionados no son correctos");
+            break;
+          } else {
+            alert("El número de DNI y su letra son correctos");
+            break;
+          }
+        } while (numDNI < 0 || numDNI > 99999999);
+        console.log("El número no es válido.");
+
+        // if (numero < 0 || numero > 99999999) {
+        //   alert("El número proporcionado no es válido");
+        // } else {
+        //   var letraCalculada = letras[numero % 23];
+        //   if (letraCalculada != letra) {
+        //     alert("La letra o el número proporcionados no son correctos");
+        //   } else {
+        //     alert("El número de DNI y su letra son correctos");
+        //   }
+        // }
+      }
+      // buscador
+      // busqueda de palabras completas
+      // Distinguir entre mayusculas y
+
+      function buscador() {}
+
+      //dte , set intervl , y tittle
+
+      function IntervalDNI() {
+        //const numDNI;
+        setInterval(
+          (numDNI = parseInt(prompt("Escribe los numeros de tu DNI: "))),
+          20000
+        );
+        if (numero < 0 || numero > 99999999) {
+          //   alert("El número proporcionado no es válido");
+          // } else {
+          //   var letraCalculada = letras[numero % 23];
+          //   if (letraCalculada != letra) {
+          //     alert("La letra o el número proporcionados no son correctos");
+          //   } else {
+          //     alert("El número de DNI y su letra son correctos");
+          //   }
+          // }
+        }
+      }
+      function dateInterval() {
+        // let dateUpdated = date.toLocateTimeString("en-US");
+        // console.log(dateUpdated);
+        // setInterval(dateUpdated, 1000);
+        // return (document.title = dateUpdated);
+        //
+        // crea un nuevo objeto `Date`
+        let date = new Date();
+
+        // obtener la hora en la configuración regional de EE. UU.
+        let dateNow = date.toLocaleTimeString();
+        
+        
+        setInterval(now, 1000);
+
+        console.log(now);
       }
     </script>
   </body>
