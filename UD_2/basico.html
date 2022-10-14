@@ -128,26 +128,51 @@
 
       // Ej 7.
 
-      let par = (num) => {
-        while (condition) {}
-      };
+      function par() {
+        let num = parseInt(prompt("Escribe un numero mayor o igual a dos: "));
 
-      //  Ej 9.
+        while (num <= 2) {
+          console.log("El numero tiene que ser mayor o igual a 2.");
+          num = parseInt(prompt("Escribe un numero mayor o igual a dos: "));
+        }
 
-      /* alert("Tabla de multiplicar");
-                            const nTabla = parseInt(prompt("Nº de tablas: "));
-                            const nFilas = parseInt(prompt("Nº de filas: "));
-                            let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
-                            for (let i = 0; i <= nFilas; i++) {
-                              let resultado = nTabla * i;
-                              console.log(`${nTabla} x ${nFilas} = ${resultado}`);
-                            }
-                            document.write(textoHTML);
-                            textoHTML += `</br> ${a} x ${i} = ${resultado}`;
-                       */
+        for (let i = 2; i <= num; i++) {
+          if (i % 2 === 0) {
+            console.log(i);
+          }
+        }
+      }
+
+      // Ej 8.
+      function impar() {
+        let num = parseInt(prompt("Escribe un numero mayor o igual a dos: "));
+
+        while (num >= 2) {
+          console.log("El numero tiene que ser mayor o igual a 2.");
+        }
+
+        for (let i = 2; i <= num; i++) {
+          if (i % 2 === 0) {
+            console.log(i);
+          }
+        }
+      }
+
+      // Ej 9.
+      function tablaMultiplicar() {
+        alert("Tabla de multiplicar");
+        const nTabla = parseInt(prompt("Nº de tablas: "));
+        const nFilas = parseInt(prompt("Nº de filas: "));
+        let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
+        for (let i = 0; i <= nFilas; i++) {
+          let resultado = nTabla * i;
+          console.log(`${nTabla} x ${nFilas} = ${resultado}`);
+        }
+        document.write(textoHTML);
+        textoHTML += `</br> ${a} x ${i} = ${resultado}`;
+      }
 
       // Ej 10.
-
       function leerNotas() {
         let notas;
         do {
@@ -166,7 +191,6 @@
       }
 
       //  Ej 14.
-
       function perimetroRectangulo(base, altura) {
         /* const base = 2;
                               const altura = 4; */
@@ -237,16 +261,16 @@
         } while (numDNI < 0 || numDNI > 99999999);
         console.log("El número no es válido.");
 
-        // if (numero < 0 || numero > 99999999) {
-        //   alert("El número proporcionado no es válido");
-        // } else {
-        //   var letraCalculada = letras[numero % 23];
-        //   if (letraCalculada != letra) {
-        //     alert("La letra o el número proporcionados no son correctos");
-        //   } else {
-        //     alert("El número de DNI y su letra son correctos");
-        //   }
-        // }
+        if (numero < 0 || numero > 99999999) {
+          alert("El número proporcionado no es válido");
+        } else {
+          var letraCalculada = letras[numero % 23];
+          if (letraCalculada != letra) {
+            alert("La letra o el número proporcionados no son correctos");
+          } else {
+            alert("El número de DNI y su letra son correctos");
+          }
+        }
       }
       // buscador
       // busqueda de palabras completas
@@ -279,14 +303,13 @@
         // console.log(dateUpdated);
         // setInterval(dateUpdated, 1000);
         // return (document.title = dateUpdated);
-        //
+
         // crea un nuevo objeto `Date`
         let date = new Date();
 
         // obtener la hora en la configuración regional de EE. UU.
         let dateNow = date.toLocaleTimeString();
-        
-        
+
         setInterval(now, 1000);
 
         console.log(now);
