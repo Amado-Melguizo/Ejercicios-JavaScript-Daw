@@ -131,12 +131,12 @@
       function par() {
         let num = parseInt(prompt("Escribe un numero mayor o igual a dos: "));
 
-        while (num <= 2) {
+        while (num >= 2) {
           console.log("El numero tiene que ser mayor o igual a 2.");
           num = parseInt(prompt("Escribe un numero mayor o igual a dos: "));
         }
 
-        for (let i = 2; i <= num; i++) {
+        for (let i = 2; i >= num; i++) {
           if (i % 2 === 0) {
             console.log(i);
           }
@@ -160,16 +160,13 @@
 
       // Ej 9.
       function tablaMultiplicar() {
-        alert("Tabla de multiplicar");
         const nTabla = parseInt(prompt("Nº de tablas: "));
         const nFilas = parseInt(prompt("Nº de filas: "));
         let textoHTML = "La tabla de multiplicar de ${a} con ${b} lineas </br>";
         for (let i = 0; i <= nFilas; i++) {
           let resultado = nTabla * i;
-          console.log(`${nTabla} x ${nFilas} = ${resultado}`);
+          console.log(`${nTabla} x ${i} = ${resultado}`);
         }
-        document.write(textoHTML);
-        textoHTML += `</br> ${a} x ${i} = ${resultado}`;
       }
 
       // Ej 10.
@@ -189,6 +186,8 @@
           }
         } while (notas !== -1);
       }
+
+      // Ej 11.
 
       //  Ej 14.
       function perimetroRectangulo(base, altura) {
@@ -213,6 +212,17 @@
         let perimetroRectangulo4 = (base, altura) => base > altura;
         let perimetroRectangulo5 = (base, altura) =>
           base > altura ? "es mayor" : "es falso";
+      }
+
+      // Ej 15.
+
+      function esPrimo() {
+        let num = parseInt(prompt("escribe del 1 al 10000: "));
+        while (1 <= num || num <= 10000) {
+          console.log("toma otros valores");
+          num = parseInt(prompt("escribe del 1 al 10000: "));
+        }
+        
       }
 
       function letraDNI() {
