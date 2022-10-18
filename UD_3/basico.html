@@ -11,10 +11,10 @@
       do {
         nombreSocio = prompt("Introduce nombre socio: ");
         nombreConj = nombreSocio.split(",");
-		console.log(`${nombreConj.length}`);
+        console.log(`${nombreConj.length}`);
       } while (nombreConj.length !== 10);
       console.log(`${nombreConj.length}`);
-	  console.log(`${nombreConj}`);
+      console.log(`${nombreConj}`);
     }
 
     function mathRandom() {
@@ -23,8 +23,68 @@
       console.log(num);
     }
 
-	function generarTablero(){
-		g
-	}
+    function generarTablero() {
+      g;
+    }
+
+    function alumnosMedia() {
+      let alumnosNumero = parseInt(prompt("Escribe el numero de alumnos: "));
+      let alumnosNombre;
+      let alumnosNota;
+      let alumnos;
+      let alumnosNombres = new Set();
+      let alumnosNotas = [];
+      for (let i = 0; i < alumnosNumero; i++) {
+        //alumnosNombre = prompt("Introduce nombre del alumno: ");
+        //alumnosNota = parseInt(prompt("Escribe la nota del alumno: "));
+        alumnos = prompt("Introduce nombre y nota del alumno: ").split(",");
+
+        alumnosNombres.add(alumnos[0]);
+        alumnosNotas.push(alumnos[1]);
+      }
+      notaMedia = alumnosNotas / alumnosNumero;
+      console.log(`${alumnos}`);
+      console.log(`nombre: ${[...alumnosNombres]}, nota: ${alumnosNotas}`);
+
+      for (let i = 0; i < array.length; i++) {
+        let nombre = [...alumnosNombres];
+        let edad = alumnosNotas[i];
+
+        console.log(`alumnos: ${nombre}-${edad}`);
+      }
+    }
+    function media() {
+      for (let i = 0; i < array.length; i++) {
+        let media = (sum += array[i]);
+        return media;
+      }
+    }
+    function edad() {}
+    //¿porque falla?
+    function crearMap() {
+      var modulos = new Map();
+      modulos.set("DWECL", "Desarrollo Web en entorno Cliente");
+      modulos.set("DWESE", "Desarrollo Web en entorno Servidor");
+      modulos.set("DWDE", "Despliegue de aplicaciones");
+      modulos.set("Daw", "Diseño de interfaces");
+    }
+    function useMap(modulos) {
+      modulos.forEach(function crearMap(clave, nombre, mapa) {
+        console.log(`Tamaño del map: ${mapa.size}`);
+        console.log(`Clave:${clave} - Nombre: ${nombre}`);
+      });
+
+      for (const [clave, nombre] of modulos.entries()) {
+        console.log(clave + " = " + nombre);
+      }
+
+      for (const [clave, nombre] of modulos.entries()) {
+        if (nombre === "Daw") {
+          modulos.delete("Daw");
+        } else {
+          console.log(clave + " = " + nombre);
+        }
+      }
+    }
   </script>
 </html>
