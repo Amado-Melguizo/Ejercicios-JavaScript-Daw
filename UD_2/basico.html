@@ -8,25 +8,104 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <body>
-    <form>
-      <label>Texto a buscar</label>
-      <input
-        type="text"
-        name="texto"
-        placeholder="Escribe una palabra.."
-        onkeyup="search()"
-      />
-      <button type="submit">Enviar</button>
-      Buscar solo palabras completas<input type="checkbox" /> Distinguir entre
-      mayusculas y minusculas<input type="checkbox" />
-    </form>
+    <label for="ejs">Seleccione el ejercicio que quiere realizar: </label>
+    <br />
+    <select id="ejs">
+      <option value="">--Elige un ejercicio--</option>
+      <option value="act1">1. Leer datos de diferentes maneras.</option>
+      <option value="act2">
+        2. Leer datos y numeros, mostrar nombre y operaciones.
+      </option>
+      <option value="act3">3. Leer numeros y si son mayores que 10.</option>
+      <option value="act4">4. Leer dia y mes y si es Navidad</option>
+      <option value="act5">
+        5. Leer sueldo y años y operar con comprarativas
+      </option>
+      <option value="act6">6. Leer nota y mostrar calificacion</option>
+      <option value="act7">7. Leer numero y mostrar los pares posibles</option>
+      <option value="act8">
+        8. Leer numero y salgan todos los impares hasta el 1.
+      </option>
+      <option value="act9">
+        9. Lee un numero y hace la tabla de multiplicar del mismo.
+      </option>
+      <option value="act10">10. Leer notas y localizar los 10.</option>
+      <option value="act11">
+        11. Leer un numero de fila y hacer un triangulo hasta esa fila.
+      </option>
+      <option value="act12">12. Leer dos numeros y hacer una suma</option>
+      <option value="act13">13. Leer un año y saber si es bisiesto</option>
+      <option value="act14">
+        14. Leer una base y altura y calcular el perimetro de un rectangulo
+      </option>
+      <option value="act15">
+        15. Leer un numero y que te muestre si es primo o no.
+      </option>
+    </select>
 
     <script>
-      //const --> daato fijo
-      //let --> dato variable
+      let select = document.querySelector("select");
 
-      //Ej 1
-      function TipologiaDatos() {
+      select.addEventListener("change", setFunctions);
+
+      function setFunctions() {
+        let choice = select.value;
+
+        switch (choice) {
+          case "act1":
+            tipologiaDatos();
+            break;
+          case "act2":
+            lecturaDatos();
+            break;
+          case "act3":
+            mayorque10();
+            break;
+          case "act4":
+            esNavidad();
+            break;
+          case "act5":
+            calcularSueldo();
+            break;
+          case "act6":
+            Notas();
+            break;
+          case "act7":
+            par();
+            break;
+          case "act8":
+            impar();
+            break;
+          case "act9":
+            tablaMultiplicar();
+            break;
+          case "act10":
+            leerNotas();
+            break;
+          case "act11":
+            triangulo();
+            break;
+          case "act12":
+            suma();
+            break;
+          case "act13":
+            esBisiesto();
+            break;
+          case "act14":
+            perimetroRectangulo();
+            break;
+          case "act15":
+            esPrimo();
+            break;
+          default:
+            para.textContent = "";
+        }
+      }
+      // const --> daato fijo
+      // let --> dato variable
+
+      // Ej 1
+      function tipologiaDatos() {
         alert("Escribe los siguientes datos");
 
         const num1 = parseInt(prompt("Escribe un numero 1: "));
@@ -42,7 +121,7 @@
         );
       }
 
-      //Ej2
+      // Ej2
 
       function lecturaDatos() {
         const num1 = parseInt(prompt("Escribe un numero 1: "));
@@ -56,20 +135,24 @@
         const multiplicacion = num1 * num2 * num3;
         const division = num1 / num3;
 
-        console.log(`"Nombre y apellidos: ${nombre} ${apellido}`);
+        console.log(`Nombre y apellido: ${nombre} ${apellido}`);
         console.log(`
-                                  "Operaciones: "
-                                  "Suma: " ${suma}+ ${suma} + ${suma} =${suma}
-                                  "Multiplicacion: " ${multiplicacion}
-                                  "Division: " ${division}`);
+        Operaciones: 
+        Suma: ${suma}+ ${suma} + ${suma} =${suma}
+        Multiplicacion: ${multiplicacion}
+        Division: ${division}`);
+
+        document.write(`Nombre y apellido: ${nombre} ${apellido}
+        <br/>----------------------------`);
+        document.write(`<br/> 
+        Operaciones:  <br/>
+        Suma: ${suma} + ${suma} + ${suma} = ${suma} <br/>
+        Multiplicacion:  ${multiplicacion}<br/>
+        Division:  ${division}`);
       }
 
       //  Ej 3
-      function fmayorque10(num1, num2, num3) {
-        /* const num1 = parseInt(prompt("Escribe un numero 1: "));
-                         const num2 = parseInt(prompt("Escribe un número 2: "));
-                         const num3 = parseInt(prompt("Escribe un número 3: "));
-                  */
+      function mayorque10(num1, num2, num3) {
         if (num1 > 10) {
           return console.log(num1, " es mayor que 10.");
         }
@@ -103,8 +186,8 @@
 
       // Ej 6.
 
-      //PReguntar a agustin fallo de las comparativas.
-      // ver si se hace con && o |
+      //Preguntar a agustin fallo de las comparativas
+      // cuando pulso 4,7,8 y sale todo el rato el else
 
       let notas = (nota) => {
         if (nota >= 0 && nota < 3) {
@@ -119,7 +202,7 @@
         if (nota === 6 && nota < 9) {
           console.log("Notable.");
         }
-        if (nota >= 9 && nota === 10) {
+        if (nota === 9 && nota === 10) {
           console.log("Sobresaliente.");
         } else {
           console.log("Esa nota no es posible.");
@@ -185,11 +268,35 @@
             console.log("NO");
           }
         } while (notas !== -1);
+        console.log("Programa terminado.");
       }
 
       // Ej 11.
 
-      //  Ej 14.
+      function triangulo() {
+        let numfilas = parseInt(prompt("¿Cuantas filas quieres?"));
+
+        for (let i = 0; i < numfilas; i++) {
+          let fila = "";
+          for (let j = 0; j < i + 1; j++) {
+            fila = fila + "*";
+          }
+          console.log(fila);
+        }
+      }
+
+      // Ej 12
+      let suma = (num1, num2) => a + b;
+
+      // Ej 13
+
+      // Preguntar fallo
+      let esBisiesto = (anyo) =>
+        anyo.toString().endsWith("00") % 400 || anyo % 4
+          ? "Es bisiesto"
+          : "No es bisiesto";
+
+      // Ej 14.
       function perimetroRectangulo(base, altura) {
         /* const base = 2;
                               const altura = 4; */
@@ -216,15 +323,20 @@
 
       // Ej 15.
 
-      function esPrimo() {
-        let num = parseInt(prompt("escribe del 1 al 10000: "));
-        while (1 <= num || num <= 10000) {
+      // fallo al comprobar el numero en el rango
+      function esPrimo(num) {
+        if (1 <= num || num <= 10000) {
+          for (let x = 2; x < num / 2; x++) {
+            if (num % x == 0) return false;
+          }
+          return true;
+        } else {
           console.log("toma otros valores");
           num = parseInt(prompt("escribe del 1 al 10000: "));
         }
-        
       }
 
+      // DNI
       function letraDNI() {
         const letras = [
           "T",
@@ -281,48 +393,6 @@
             alert("El número de DNI y su letra son correctos");
           }
         }
-      }
-      // buscador
-      // busqueda de palabras completas
-      // Distinguir entre mayusculas y
-
-      function buscador() {}
-
-      //dte , set intervl , y tittle
-
-      function IntervalDNI() {
-        //const numDNI;
-        setInterval(
-          (numDNI = parseInt(prompt("Escribe los numeros de tu DNI: "))),
-          20000
-        );
-        if (numero < 0 || numero > 99999999) {
-          //   alert("El número proporcionado no es válido");
-          // } else {
-          //   var letraCalculada = letras[numero % 23];
-          //   if (letraCalculada != letra) {
-          //     alert("La letra o el número proporcionados no son correctos");
-          //   } else {
-          //     alert("El número de DNI y su letra son correctos");
-          //   }
-          // }
-        }
-      }
-      function dateInterval() {
-        // let dateUpdated = date.toLocateTimeString("en-US");
-        // console.log(dateUpdated);
-        // setInterval(dateUpdated, 1000);
-        // return (document.title = dateUpdated);
-
-        // crea un nuevo objeto `Date`
-        let date = new Date();
-
-        // obtener la hora en la configuración regional de EE. UU.
-        let dateNow = date.toLocaleTimeString();
-
-        setInterval(now, 1000);
-
-        console.log(now);
       }
     </script>
   </body>
