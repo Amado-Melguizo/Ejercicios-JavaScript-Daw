@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <!-- Meta-Informacion de la pagina-->
+    <meta charset="utf-8" />
+  </head>
+  <ul id="lista">
+    lista de la compra
+    <li>azucar</li>
+    <li>cerveza</li>
+    <li>pan</li>
+  </ul>
+  <input id="producto" placeholder="escribe un nuevo producto" />
+  <input value="añadir" type="submit" onclick="listaCompra()" />
+  <script type="text/javascript" defer>
+    function listaCompra() {
+
+      //Creo el array de la lista
+      let list = [];
+      //findIndex()
+      //document
+
+      //Recorro la lista y saco los productos.
+      let lista = document.querySelector("#lista");
+      let productos = document.getElementsByTagName("li");
+
+      //Creo el nuevo producto
+      //Creo el espacio e la lista
+      let li = document.createElement("li");
+      
+      // recojo la info del input que puse
+      //Creo el producto
+      li.innerHTML = producto.value;
+
+      //Lo agrego a la lista
+      lista.appendChild(li);
+    }
+  </script>
+</html>
