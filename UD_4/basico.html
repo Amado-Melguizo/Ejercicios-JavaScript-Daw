@@ -13,7 +13,6 @@
   <input value="añadir" type="submit" onclick="listaCompra()" />
   <script type="text/javascript" defer>
     function listaCompra() {
-
       //Creo el array de la lista
       let list = [];
       //findIndex()
@@ -26,7 +25,7 @@
       //Creo el nuevo producto
       //Creo el espacio e la lista
       let li = document.createElement("li");
-      
+
       // recojo la info del input que puse
       //Creo el producto
       li.innerHTML = producto.value;
@@ -34,5 +33,52 @@
       //Lo agrego a la lista
       lista.appendChild(li);
     }
+
+    tvSamsung = {
+      nombre: "TV Sammsung42",
+      categoria: "Televisores",
+      unidades: 4,
+      precio: 345.95,
+
+      importe: function () {
+        return this.unidades * this.precio;
+      },
+    };
+    //console.log(`El importe es: " ${importe}`);
+
+    class productosClass {
+      constructor(nombre, categoria, unidades, precio) {
+        this._nombre = nombre;
+        this._categoria = categoria;
+        this._unidades = unidades;
+        this._precio = precio;
+      }
+
+      get edad() {
+        return this._edad;
+      }
+      set edad(valor) {
+        this._edad = valor;
+      }
+      importe(unidades, precio) {
+        return this.unidades + this.precio;
+      }
+      getInfo() {
+        document.write(
+          `Nombre ${this.categoria}: unidades ${this.unidades} x precio ${this.precio}€ = ${this.importe}€`
+        );
+        document.write(`", Edad " + this.edad`);
+      }
+      static confirmacion() {
+        alert("Enhorabuena esta funcionando la clase Persona");
+      }
+    }
+    var tele1 = new productoClass("TV Sammsung42", "Televisores", 4, 345.95);
+    var tele2 = new productoClass("TV Xiaomi54", "Televisores", 7, 289.95);
+    var tele3 = new productoClass("TV Lenovi66", "Televisores", 9, 186.95);
+    mama.importe(1);
+    mama.imprimirInfo();
+    mama.edad;
+    personaClass.confirmacion();
   </script>
 </html>
