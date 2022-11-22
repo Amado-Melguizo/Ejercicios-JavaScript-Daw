@@ -3,63 +3,191 @@
     <!-- Meta-Informacion de la pagina-->
     <meta charset="utf-8" />
   </head>
-  <body></body>
+  <body>
+    <!-- Texto a buscar 
+    <input type="text" name="" id="">
+    <input type="submit" value="Enviar"> 
+    Buscar solo palabras completas
+    <input type="checkbox" name="" id="" >
+    Distinguir entre mayusculas y minusculas
+    <input type="checkbox" name="" id="">  -->
+  </body>
   <script type="text/javascript" defer>
+    // Ej 1
+
+    // buscador
+    // busqueda de palabras completas
+    // Distinguir entre mayusculas y
+    // no se como funciona bien lo del texto del buscador.
+    function buscador() {}
+
+    //dte , set intervl , y tittle
+
+    //arreglar el bucle infnito
+    function IntervalDNI() {
+      //const numDNI;
+      let letrasDNI = [];
+      setInterval(
+        (numDNI = parseInt(prompt("Escribe los numeros de tu DNI: "))),
+        20000
+      );
+      var letras = [
+        "T",
+        "R",
+        "W",
+        "A",
+        "G",
+        "M",
+        "Y",
+        "F",
+        "P",
+        "D",
+        "X",
+        "B",
+        "N",
+        "J",
+        "Z",
+        "S",
+        "Q",
+        "V",
+        "H",
+        "L",
+        "C",
+        "K",
+        "E",
+      ];
+      let realLetraDNI = letras[numDNI % 23];
+      do {
+        console.log(`La letra del ${numDNI} es ${realLetraDNI}`);
+        letrasDNI.push(realLetraDNI);
+      } while (numDNI != -1);
+      for (let i = 0; i < letrasDNI.length; i++) {
+        console.log(`Las letras conseguidas son ${letrasDNI}`);
+      }
+    }
+
+    function dateInterval() {
+      // let dateUpdated = date.toLocateTimeString("en-US");
+      // console.log(dateUpdated);
+      // setInterval(dateUpdated, 1000);
+      // return (document.title = dateUpdated);
+
+      // crea un nuevo objeto `Date`
+      let date = new Date();
+
+      // obtener la hora en la configuración regional de EE. UU.
+      let dateNow = date.toLocaleTimeString();
+
+      setInterval(now, 1000);
+
+      console.log(now);
+    }
+
+    // no funcionan el short y el reverse.
     function nombresSplit() {
-      let nombreSocio = "s";
-      let nombreConj = [];
+      let nombreSocio = " ";
+      let listaSocios = [];
       do {
         nombreSocio = prompt("Introduce nombre socio: ");
-        nombreConj = nombreSocio.split(",");
-        console.log(`${nombreConj.length}`);
-      } while (nombreConj.length !== 10);
-      console.log(`${nombreConj.length}`);
-      console.log(`${nombreConj}`);
+        listaSocios = nombreSocio.split(",");
+        console.log(`${listaSocios.length}`);
+      } while (listaSocios.length !== 10);
+      let listaSociosOrd = listaSocios.sort();
+      let listaSociosInv = listaSocios.reverse();
+      console.log(`Lista de Socios: ${listaSocios}`);
+      console.log(`Numero de Socios: ${listaSocios.length}`);
+      console.log(`Lista de Socios Ordenada: ${listaSociosOrd}`);
+      console.log(`Lista de Socios Inversa: ${listaSociosInv}`);
     }
 
-    function mathRandom() {
-      let numero = parseInt(prompt("Escribe hasta donde quieres el límite: "));
-      let num = Math.ceil(Math.random() * numero);
-      console.log(num);
-    }
+    // function mathRandom() {
+    //   let numero = parseInt(prompt("Escribe hasta donde quieres el límite: "));
+    //   let num = Math.ceil(Math.random() * numero);
+    //   console.log(num);
+    // }
 
-    function generarTablero() {
-      g;
-    }
+    // function generarTablero() {
+    //   g;
+    // }
 
-    function alumnosMedia() {
+    function alumnosMediaNota() {
       let alumnosNumero = parseInt(prompt("Escribe el numero de alumnos: "));
-      let alumnosNombre;
-      let alumnosNota;
-      let alumnos;
-      let alumnosNombres = new Set();
+      let alumnosNombres = [];
       let alumnosNotas = [];
       for (let i = 0; i < alumnosNumero; i++) {
         //alumnosNombre = prompt("Introduce nombre del alumno: ");
         //alumnosNota = parseInt(prompt("Escribe la nota del alumno: "));
         alumnos = prompt("Introduce nombre y nota del alumno: ").split(",");
 
-        alumnosNombres.add(alumnos[0]);
+        alumnosNombres.push(alumnos[0]);
         alumnosNotas.push(alumnos[1]);
       }
-      notaMedia = alumnosNotas / alumnosNumero;
-      console.log(`${alumnos}`);
-      console.log(`nombre: ${[...alumnosNombres]}, nota: ${alumnosNotas}`);
 
-      for (let i = 0; i < array.length; i++) {
-        let nombre = [...alumnosNombres];
-        let edad = alumnosNotas[i];
+      //¿como se hace la media?
+      let alumnosMedias = alumnosNotas / alumnosNumero;
 
-        console.log(`alumnos: ${nombre}-${edad}`);
+      console.log(`nombre: ${alumnosNombres}, nota: ${alumnosNotas}`);
+      console.log(`media de los ${alumnosNumero} alumnos: ${alumnosMedias}`);
+    }
+    function alumnosMediaEdad() {
+      let alumnosNombres = [];
+      let alumnosEdades = [];
+      for (let i = 0; i < 6; i++) {
+        //alumnosNombre = prompt("Introduce nombre del alumno: ");
+        //alumnosNota = parseInt(prompt("Escribe la nota del alumno: "));
+        alumnos = prompt("Introduce nombre y nota del alumno: ").split(",");
+
+        alumnosNombres.push(alumnos[0]);
+        alumnosEdades.push(alumnos[1]);
+      }
+      //¿como se hace la media?
+      let alumnosMedias = alumnosEdades / 6;
+
+      console.log(`nombre: ${alumnosNombres}, edad: ${alumnosEdades}`);
+      console.log(`media de los 6 alumnos: ${alumnosMedias}`);
+      let alumno = prompt("Escribe el nombre que quieras buscar: ");
+      if (alumnosNombres.some((e) => e == alumno)) {
+        let edad;
+        console.log(`edad del alumno ${alumno} es ${edad}`);
+      } else {
       }
     }
+
+    // funcion media ¿como se usa?
     function media() {
       for (let i = 0; i < array.length; i++) {
         let media = (sum += array[i]);
         return media;
       }
     }
-    function edad() {}
+    // function alumnosMedia() {
+    //   let alumnosNumero = parseInt(prompt("Escribe el numero de alumnos: "));
+    //   let alumnosNombre;
+    //   let alumnosNota;
+    //   let alumnos;
+    //   let alumnosNombres = new Set();
+    //   let alumnosNotas = [];
+    //   for (let i = 0; i < alumnosNumero; i++) {
+    //     //alumnosNombre = prompt("Introduce nombre del alumno: ");
+    //     //alumnosNota = parseInt(prompt("Escribe la nota del alumno: "));
+    //     alumnos = prompt("Introduce nombre y nota del alumno: ").split(",");
+
+    //     alumnosNombres.add(alumnos[0]);
+    //     alumnosNotas.push(alumnos[1]);
+    //   }
+    //   notaMedia = alumnosNotas / alumnosNumero;
+    //   console.log(`${alumnos}`);
+    //   console.log(`nombre: ${[...alumnosNombres]}, nota: ${alumnosNotas}`);
+
+    //   for (let i = 0; i < array.length; i++) {
+    //     let nombre = [...alumnosNombres];
+    //     let edad = alumnosNotas[i];
+
+    //     console.log(`alumnos: ${nombre}-${edad}`);
+    //   }
+    // }
+
+    //¿porque falla?
     function crearMap() {
       var modulos = new Map();
       modulos.set("DWECL", "Desarrollo Web en entorno Cliente");
