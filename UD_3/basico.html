@@ -1,5 +1,13 @@
 <html>
   <head>
+    <!-- 
+      - Nodos (3pts)
+      - Crear atributos(2pts)
+      -
+      -
+      -
+     -->
+
     <!-- Meta-Informacion de la pagina-->
     <meta charset="utf-8" />
   </head>
@@ -146,10 +154,21 @@
       console.log(`nombre: ${alumnosNombres}, edad: ${alumnosEdades}`);
       console.log(`media de los 6 alumnos: ${alumnosMedias}`);
       let alumno = prompt("Escribe el nombre que quieras buscar: ");
+
+      // ¿Como se busca un elemento en un array?
+      // posicion¿?
+      if (alumnosNombres.includes(alumno)) {
+        let edad;
+        console.log(`edad del alumno ${alumno} es ${edad}`);
+      } else {
+        alert("No existe el usuario.");
+      }
+
       if (alumnosNombres.some((e) => e == alumno)) {
         let edad;
         console.log(`edad del alumno ${alumno} es ${edad}`);
       } else {
+        alert("No existe el usuario.");
       }
     }
 
@@ -188,7 +207,7 @@
     // }
 
     //¿porque falla?
-    function crearMap() {
+    function modulosMap() {
       var modulos = new Map();
       modulos.set("DWECL", "Desarrollo Web en entorno Cliente");
       modulos.set("DWESE", "Desarrollo Web en entorno Servidor");
@@ -196,7 +215,7 @@
       modulos.set("Daw", "Diseño de interfaces");
     }
     function useMap(modulos) {
-      modulos.forEach(function crearMap(clave, nombre, mapa) {
+      modulos.forEach(function modulosMap(clave, nombre, mapa) {
         console.log(`Tamaño del map: ${mapa.size}`);
         console.log(`Clave:${clave} - Nombre: ${nombre}`);
       });
