@@ -3,6 +3,13 @@
     <!-- Meta-Informacion de la pagina-->
     <meta charset="utf-8" />
   </head>
+
+  <div>
+    <p>Este es el primer parrafo</p>
+    <p>Este es el segundo parrafo</p>
+    <p>Este es el tercer parrafo</p>
+  </div>
+  <input type="submit" value="Cantidad Hijos del DIV" onclick="nodes()" />
   <ul id="lista">
     lista de la compra
     <li>azucar</li>
@@ -11,7 +18,93 @@
   </ul>
   <input id="producto" placeholder="escribe un nuevo producto" />
   <input value="añadir" type="submit" onclick="listaCompra()" />
+  <input value="nader-destruir" type="submit" onclick="destruir(this)" />
+
+  <h1>Gastos del Viaje</h1>
+  <h3>Importe Total : <span id="idImporteTotal"> 536</span> €</h3>
+  <ul id="lista">
+    <li>hotel : 300</li>
+    <li>avión : 195</li>
+    <li>taxi : 41</li>
+  </ul>
+  <input type="text" value="" id="gasto" />
+  <input type="button" value="Añadir" onclick="anadirGasto()" />
+
   <script type="text/javascript" defer>
+    function anadirGasto() {
+      let lista=[]
+
+document.querySelectorAll("li").forEach(element => {
+    lista.push(element.innerHTML)
+});
+
+function gastos(){
+
+    let listaGastos = document.querySelector("#lista")
+    let elemento = document.getElementsByTagName("li")
+
+    let gasto = document.getElementById("gasto")
+    let liCreado = document.createElement("li")
+
+    liCreado.innerHTML = gasto.value
+    liCreado.setAttribute("onclick","borrar(this)")
+
+    listaGastos.appendChild(liCreado)
+
+    lista.push(liCreado.innerHTML)
+    lista.sort()
+
+    for(let i = 0; i < lista.length; i++){
+        elemento[i].innerHTML = lista [i]
+    }
+    importe()
+}
+
+function borrar(elemento){
+    if(elemento.classList != "rojo"){
+        elemento.className = "rojo"
+        let importeTotal = parseInt(document.getElementById("idImporteTotal").innerHTML)
+        importeTotal -= parseInt(elemento.innerHTML.split(" : ")[1])
+        document.getElementById("idImporteTotal").innerHTML = importeTotal.toString()
+    }else{
+        elemento.classList.remove("rojo")
+        let importeTotal = parseInt(document.getElementById("idImporteTotal").innerHTML)
+        importeTotal += parseInt(elemento.innerHTML.split(" : ")[1])
+        document.getElementById("idImporteTotal").innerHTML = importeTotal.toString()
+    }
+}
+
+function importe(){
+    let elementos = document.querySelectorAll("li")
+    let importeTotal = 0
+
+    elementos.forEach(element =>{
+        importeTotal += parseInt(element.innerHTML.split(" : ")[1])
+    })
+    document.getElementById("idImporteTotal").innerHTML = importeTotal.toString()
+}
+    }
+
+    function nodes() {
+      let childs = document.getElementsByTagName("div")[0];
+      console.log("Esta pagina tiene ", childs.childNodes.length, " hijos.");
+    }
+    // let destruir = (pulsado) =>
+    //   pulsado == 5 ? prompt("¿Quiere que me autodestruya?") : "";
+    let pulsado = 0;
+    function destruir(boton) {
+      pulsado++;
+      if (pulsado == 5) {
+        let alerta = prompt("¿Quiere que me autodestruya?");
+        if (alerta == "yes") {
+          console.log("me destruyo.");
+          boton.remove();
+        } else {
+          alert("gracias.");
+        }
+      }
+    }
+
     function listaCompra() {
       //Creo el array de la lista
       let list = [];
