@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Minesweeper War</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script language="JavaScript" src="js/funciones.js"></script>
+
+    <!-- <script src="app/cronometro.js" defer></script> -->
+    <!-- <script type="module" src="app/jugarBuscaminas.js" defer></script> -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/estilo.css" /> -->
+  </head>
+
+  <body>
+    <!-- cambiar a nav y sections -->
+    <nav class="sticky-menu">
+      <section></section>
+    </nav>
+
+    <div class="menuJuego">
+      <h2>¡¡DEFIENDE NUESTRA BASE!!</h2>
+      <div class="div-col">
+        <h2><u>Tablero Juego</u></h2>
+        <h2><u>Marcador</u></h2>
+      </div>
+
+      <div class="">
+        <div id="idTablero"></div>
+        <div class="log">
+          <h3><u>Nombre del soldado:</u></h3>
+          <div class="cronometro">
+            <p>Amado</p>
+          </div>
+
+          <h3><u>Tiempo de juego</u></h3>
+          <div class="cronometro">
+            <div id="ms"></div>
+          </div>
+
+          <h3>
+            <u>Número de banderas:</u>
+          </h3>
+          <div class="cronometro">
+            
+            <div id="banderas">
+              <p>🏳️ : 10</p>
+            </div>
+          </div>
+
+          <h3><u>Movimientos:</u></h3>
+          <div class="cronometro">
+            <p id="clicks">0</p>
+          </div>
+        </div>
+      </div>
+      <input type="checkbox" id="cerrar" />
+
+      <div class="modal">
+        <div class="contenido">
+          <div class="imgVather">
+            <img src="img/darth_vader1.jpg" alt="" />
+          </div>
+          <div class="textVather">
+            <h2 style="color: black">
+              <u>Darth Vather</u>
+            </h2>
+            <h2 style="color: black">¡Ey! ¡soldado rebelde!</h2>
+            <h2 style="color: black">
+              ¡Espero que estés preparado , he llenado una base de minas , vé y
+              comienza el entrenamiento!!
+            </h2>
+            <button class="buttonGame">
+              <label for="cerrar" id="btn-cerrar">
+                <h2 style="color: black">¡Al ataque!</h2>
+              </label>
+            </button>
+
+            <button class="levelGame">
+              <h3 style="color: black; margin-top: 0px">
+                ¿Que nivel eres capaz?
+              </h3>
+              <select id="level" name="level">
+                <option value="level1">Nivel Cadete</option>
+                <option value="level2">Nivel Sargento</option>
+                <option value="level3">Nivel Lord Vather</option>
+              </select>
+            </button>
+
+            <button
+              class="buttonLogin"
+              onclick="window.location.href='login.html'"
+            >
+              <h3 style="color: black; margin-top: 0px; margin-bottom: 0px">
+                ¡Oh no, se me olvidó el registro a mi escuadrón!
+              </h3>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="menu-element">
+        Pagina diseñada por
+        <a href="autor.html" target="_blank">Amado Melguizo</a>
+      </div>
+    </footer>
+  </body>
+</html>

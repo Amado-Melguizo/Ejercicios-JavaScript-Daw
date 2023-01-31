@@ -1,0 +1,19 @@
+@mixin bordes-redondeados(
+  $color: red , 
+  $height: 150px,
+  $radio:15px
+  ) 
+  {
+    background: $color;
+    border-radius: $radio;
+    -webkit-border-radius:$radio;
+    -moz-border-radius: $radio;
+
+}
+h1 {
+
+  @include bordes-redondeados($height:60.........0px, $radio:60px );
+}
+p {
+  @include bordes-redondeados($color: blue);
+}
