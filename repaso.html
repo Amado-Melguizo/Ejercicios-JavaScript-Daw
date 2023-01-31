@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="repaso.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+     <ul id="lista">
+      Lista de compra
+      <li onclick="borrarProd()">Cerveza</li>
+      <li>Pan</li>
+      <li>Patatas</li>
+    </ul>
+    <input type="text" id="producto" placeholder="añadir productos" />
+    <input type="submit" value="Añadir" onclick="añadirProd(this)" />
+
+    <br />
+    <br /> 
+
+    <h1>Gastos del Viaje</h1>
+    <h3>Importe Total : <span id="idImporteTotal"> 536</span> €</h3>
+    <ul id="lista">
+      <li>hotel : 300</li>
+      <li>avión : 195</li>
+      <li>taxi : 41</li>
+    </ul>
+    <input type="text" value="" id="gasto" />
+    <input type="button" value="Añadir" onclick="anadirGasto()" />
+
+    <br />
+    <br />
+    <button onclick="iniciar()">Start</button>
+    <button onclick="parar()">Stop</button>
+    <button onclick="reiniciar()">Reset</button>
+    <p id="idContador"></p>
+  </body>
+</html>
