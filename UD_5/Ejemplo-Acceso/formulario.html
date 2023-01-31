@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo Formulario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/formulario.css">
+  <script src="js/formulario.js" defer></script>
+</head>
+<body>
+    <form id="id_form" method="post" action="formulario.html">
+      <h1>Formulario</h1>
+      <label>Tu nombre:
+        <input type="text" id="id_input_text" name="name"><br>
+      </label>
+      
+      <label>Teléfono de contacto:
+        <input type="number" id="id_input_number" name="telefono"><br>
+      </label>
+      
+      <label>Correo electrónico:
+        <input type="email" id="id_input_email" name="email"><br>
+      </label>  
+      
+      <label>Fecha de nacimiento:
+        <input type="date" id="id_input_date" name="date"><br>
+      </label> 
+      
+      <label>Color favorito:
+        <input type="color" id="id_input_color" name="color" value="#000000"><br>
+      </label>
+      
+      <label>Contraseña:
+        <input type="password" id="id_input_password" name="password"><br>
+      </label> 
+      
+      <label>Cuéntanos algo sobre ti:<br> 
+        <textarea name="aboutme" id="id_textarea"></textarea><br>
+      </label>
+      
+      <label>Selecciona los días con disponibilidad:</label><br> 
+        <label><input type="checkbox" id="id_check_monday" class="day-available" name="monday-available" value="on"> Lunes</label><br>
+        <label><input type="checkbox" id="id_check_tuesday" class="day-available" name="tuesday-available" value="on"> Martes</label><br>
+        <label><input type="checkbox" id="id_check_wednesday" class="day-available" name="wednesday-available" value="on"> Miércoles</label><br>
+        <label><input type="checkbox" id="id_check_thursday" class="day-available" name="thursday-available" value="on"> Jueves</label><br>
+        <label><input type="checkbox" id="id_check_friday" class="day-available" name="friday-available" value="on"> Viernes</label><br>
+        
+      <label>Selecciona el día preferente
+        <select name="preferred_day" id="id_select" required>
+          <option value="" selected disabled>Ningún elemento seleccionado</option>
+        </select>
+      </label><br>
+      
+      <label>Elige un color para el formulario</label><br>
+      <label>Rojo <input type="radio" name="form-color" value="#bf4040"></label><br>
+      <label>Verde <input type="radio" name="form-color" value="#bfff00"></label><br>
+      <label>Azul <input type="radio" name="form-color" value="#00ffff"></label><br>
+      <label>Oscuro <input type="radio" name="form-color" value="#868679"></label><br>
+      
+      <label>Indica tu ciudad: 
+        <input list="cities" name="city" id="id_datalist">
+      </label>
+        <datalist id="cities">
+          <option value="Madrid">
+          <option value="Barcelona">
+          <option value="Bilbao">
+          <option value="Valencia">
+          <option value="Sevilla">
+          <option value="Vigo">
+        </datalist><br>
+      
+      
+      <input type="hidden" name="hidden" value="sent" id="id_hidden">
+      
+      <input type="submit" name="submit" value="Enviar">
+      
+      <input type="reset" name="reset" value="Borrar">
+      
+    </form>
+    
+    <div id="answers">
+      <h2>Respuestas</h2>
+    </div>
+    
+    
+
+</body>
+</html>
+

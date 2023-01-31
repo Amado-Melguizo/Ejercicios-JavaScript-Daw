@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="submit" id="back" value="Boton" />
+    <input id="xy" />
+    <input 
+      onmousemove="this.value=event.clientX+':'+event.clientY"
+      value="Pasa el mouse sobre mí"
+    />
+  </body>
+  <script defer>
+    document.getElementById("back").addEventListener("click", cambioColor);
+    document.addEventListener("click", cambioColor);
+
+    document.getElementById("xy").addEventListener("onmousemove", coordenadas);
+
+    function coordenadas(e){
+        
+    }
+
+    function cambioColor(event) {
+      let numColor = Math.ceil(3 * Math.random());
+      console.log(numColor);
+      if (event.target.type === "submit") {
+        if (numColor === 1) {
+          document.body.style.backgroundColor = "red";
+        }
+        if (numColor === 2) {
+          document.body.style.background = "blue";
+        }
+        if (numColor === 3) {
+          document.body.style.background = "green";
+        }
+      } else {
+        document.body.style.background = "white";
+      }
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  </script>
+</html>

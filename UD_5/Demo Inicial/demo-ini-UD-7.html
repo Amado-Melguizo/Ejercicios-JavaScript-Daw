@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios en JavaScript</title>
+    <script type="text/javascript" src="./form.js" defer></script>
+  </head>
+  <body>
+    <h1>Formularios</h1>
+
+    <form id="idFormulario">
+      <!-- ÁREA de INPUT TEXT -->
+      <label for="idNombre">Nombre: </label>
+      <input
+        type="text"
+        id="idNombre"
+        name="nombre"
+        placeholder="Escribe el nombre"
+      />
+      <span id="idNombreError"></span>
+      <br />
+      <br />
+      <label for="idDate">Edad: </label>
+      <input
+        type="number"
+        id="idDate"
+        name="edad"
+        placeholder="Escribe la edad"
+      />
+      <span id="idDateError"></span>
+      <br />
+      <br />
+      <label for="idDNI">DNI: </label>
+      <input
+        type="text"
+        id="idDNI"
+        name="nombre"
+        placeholder="Escribe el DNI"
+      />
+      <span id="idDNIError"></span>
+      <br />
+      <br />
+      <!-- <label for="idDate">Fecha de nacimiento</label>
+      <input id="idDate" type="date" name="fecha" max="2022-06-15" />
+      <span id="idDateError"></span>
+
+      <br />
+      <br /> -->
+      <!-- ÁREA de RadioButton  : si , no , nsnc -->
+      <!-- <label for="id">Nombre: </label>
+
+      <input type="radio" name="opcion" value="Y" checked/> Si
+      <input type="radio" name="opcion" value="N" /> No
+      <br />
+      <br /> -->
+
+      <!-- ÁREA de checkbox  : condiciones y privacidad -->
+      <label for="idCondiciones"> acepto las condiciones y privacidad.</label>
+      <input
+        id="idCondiciones"
+        name="condiciones"
+        type="checkbox"
+        value="checked"
+      />
+      <span id="idCondicionesError"></span>
+      <br />
+      <br />
+
+      <!-- ÁREA de Select  : primer, segundo, tercer, cuarto -->
+      <select id="idOpcion">
+        <option value="1">Primero</option>
+        <option value="2">Segundo</option>
+        <option value="3">Tercero</option>
+      </select>
+      <span id="idOpcionError"></span>
+      <br />
+      <br />
+
+      <!-- ÁREA de input list + DataList : primer, segundo, tercer, cuarto -->
+      <label for="opcion">Choose your option from the list:</label>
+      <input list="opciones" name="opcion" id="opcion" />
+
+      <datalist id="opciones">
+        <option value="Primero"></option>
+        <option value="Segundo"></option>
+        <option value="Tercero"></option>
+        <option value="Cuarto"></option>
+      </datalist>
+
+      <br />
+      <br />
+      <select name="ciudad">
+        <optgroup label="Europa">
+          <option>Madrid</option>
+          <option>Londres</option>
+          <option>Paris</option>
+        </optgroup>
+        <optgroup label="Suramerica">
+          <option>Santiago</option>
+          <option>Sao Paulo</option>
+          <option>Lima</option>
+          <option>Bogota</option>
+        </optgroup>
+        <optgroup label="Africa">
+          <option>Casablanca</option>
+          <option>Ciudad del Cabo</option>
+        </optgroup>
+      </select>
+      <br />
+      <br />
+
+      <label>Contra</label>
+
+      <input type="password" id="clave" name="clave" size="20" />
+      <br />
+      <br />
+      <label>Fichero</label>
+
+      <input type="file" id="identificador" value="valor" name="nombre" />
+      <br />
+      <br />
+      <label>Campos Ocultos</label>
+
+      <input type="hidden" id="identificador" value="valor" name="nombre" />
+      <br />
+      <br />
+      <label>Imagen</label>
+
+      <input
+        type="image"
+        src="url-image"
+        name="nombre"
+        alt="texto-alternativo"
+      />
+      <br />
+      <br />
+      <textarea rows="10" cols="50" name="comentario">
+ Contenido de comentario...</textarea
+      >
+      <br />
+      <br />
+
+      <input id="idEnviar" type="button" value="Enviar" />
+      <input type="reset" name="reset" value="Borrar datos" />
+    </form>
+
+    <p id="res"></p>
+  </body>
+</html>
