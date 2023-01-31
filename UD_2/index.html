@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Meta-Informacion de la pagina-->
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      function letraDNI() {
+        var letras = [
+          "T",
+          "R",
+          "W",
+          "A",
+          "G",
+          "M",
+          "Y",
+          "F",
+          "P",
+          "D",
+          "X",
+          "B",
+          "N",
+          "J",
+          "Z",
+          "S",
+          "Q",
+          "V",
+          "H",
+          "L",
+          "C",
+          "K",
+          "E",
+        ];
+
+        let numDNI = parseInt(
+          prompt("Introduce tu número de DNI")
+        );
+        let letraDNI = prompt("Introduce la letra de tu DNI (en mayúsculas)");
+
+        letraDNI = letraDNI.toUpperCase();
+
+        if (numDNI < 0 || numDNI > 99999999) {
+          alert("El número no es válido");
+        } else {
+          let realLetraDNI = letras[numDNI % 23];
+          if (realLetraDNI != letraDNI) {
+            alert("La letra o el número no son correctos");
+          } else {
+            alert("El número y letra de su DNI son correctos");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
