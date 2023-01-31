@@ -1,0 +1,117 @@
+* {	
+	box-sizing: content-box;
+}
+form#idFormInicio{
+	display: block;
+	text-align: center;
+	
+}
+
+form#idFormInicio div{
+	display: block;
+	padding: 10px;
+}
+
+div#idReloj {	
+	display: block;
+	text-align: center;
+	background-color: #e5effc;	
+	padding: 10px;
+	font-family: Arial;   
+    font-size: 21px;
+	font-weight: bold;
+}
+#idTablero > div{	
+	float : left;
+	width: 30%;	
+	border-radius: 10px;    
+    border: 2px solid #39c;
+	margin: 1%;
+	text-align: center;
+}
+ input , button {
+	border:2px solid #508AD3;
+	border-radius:3px;
+	background-color:#e5effc;
+	font-family: Arial;   
+    font-size: 14px;
+	font-weight: bold;
+}
+label {
+	font-family: Arial;   
+    font-size: 15px;
+	font-weight: bold;
+}
+
+.ocultar {
+	display: none;
+
+}
+.mostrar {
+	display: visible;
+}
+
+img.dados {
+	width: 150px;
+	height:  150px;
+}
+h3 {
+	font-family: Arial;   
+    font-size: 21px;
+    color: black;
+    text-shadow: 0px 0px 9px #508AD3;
+	background-color:#e5effc;	
+}
+hr{
+	height: 10px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(20, 73, 153, 0.377);
+}
+div#idResultado {	
+	position: fixed;
+	bottom: 10px;
+	width: 60%;
+	margin-left: 20%;
+	border-radius: 10px;  
+	text-align: center;  
+    border: 2px solid #39c;	
+	background-color: white;
+	z-index: 10;
+		
+}
+#idListadoJugadores{
+	padding-bottom: 20px ;
+}
+span#idNombreJugadores{
+	font-family: Arial;   
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+#idTablaResultados {
+	display: inline;
+	width: 50%;
+}
+
+#idTablaResultados  thead tr { 
+	background-color: #39c;
+	color: #ffffff; 
+	text-align: middle; 
+}
+#idTablaResultados, #idTablaResultados td { 
+	padding: 12px 15px;
+ }
+
+ #idTablaResultados tbody tr { 
+	border-bottom: 1px solid #dddddd;
+ } 
+ 
+#idTablaResultados  tbody tr:nth-of-type(even) { 
+	background-color: #f3f3f3; 
+}  
+
+#idTablaResultados  tbody tr:last-of-type { 
+	border-bottom: 2px solid #009879; 
+}
+
