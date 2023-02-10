@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .caja {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ejercicio1  -->
+    <p>Ejercicio 1</p>
+    <input type="submit" id="botonC" value="Boton" />
+
+    <!-- Ejercicio 2 -->
+    <hr />
+    <p>Ejercicio 2</p>
+    <div id="raton">
+      <h1>Posicion del ratón en tiempo real</h1>
+    </div>
+
+    <!-- Ejercicio 3 -->
+    <hr />
+    <p>Ejercicio 3</p>
+    <div class="caja" id="caja"></div>
+
+    <!-- Ejercicio 4 -->
+    <hr />
+    <p>Ejercicio 4</p>
+    <img id="p" src="img/p.PNG" />
+    <img id="b" src="img/b.PNG" />
+  </body>
+  <script defer>
+    //Ejercicio1
+    document.getElementById("botonC").addEventListener("click", cambioColor);
+    document.addEventListener("click", fondo);
+
+    function fondo(event) {
+      document.body.style.backgroundColor = "white";
+    }
+
+    function cambioColor(event) {
+      let numColor = Math.ceil(3 * Math.random());
+      console.log(numColor);
+      if (event.target.type === "submit") {
+        if (numColor === 1) {
+          console.log("azul");
+          document.body.style.background = "blue";
+        }
+        if (numColor === 2) {
+          document.body.style.backgroundColor = "yellow";
+          console.log("amarillo");
+        }
+        if (numColor === 3) {
+          document.body.style.backgroundColor = "purple";
+          console.log("morado");
+        }
+      }
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Ejercicio 2
+    let texto = document.getElementById("raton");
+    let textoX = document.createElement("p");
+    textoX.setAttribute("id", "x");
+    textoX.innerHTML = `Coordenadas x`;
+    texto.appendChild(textoX);
+
+    let textoY = document.createElement("p");
+    textoY.setAttribute("id", "y");
+    textoY.innerHTML = `Coordenadas y`;
+    texto.appendChild(textoY);
+
+    document.addEventListener("mousemove", coordenadas);
+
+    function coordenadas(event) {
+      let x = document.getElementById("x");
+      let y = document.getElementById("y");
+
+      x.innerHTML = `Coordenadas x: ${event.clientX}`;
+      y.innerHTML = `Coordenadas y: ${event.clientY}`;
+
+      //   alert(`x: ${event.clientX}, y: ${event.clientY}`)
+    }
+
+    // Ejercicio 3
+
+    document.onkeypress = movimiento;
+
+    function movimiento(event) {
+      console.log(event);
+      //   alert(event.key);
+      let caja = document.getElementById("caja");
+      if (event.key === "w") {
+        console.log("arriba");
+        caja.style.marginTop = "50px";
+      }
+      if (event.key === "s") {
+        console.log("abajo");
+        caja.style.marginBottom = "50px";
+      }
+      if (event.key === "q") {
+        console.log("izq");
+        caja.style.marginLeft = "50px";
+      }
+      if (event.key === "e") {
+        console.log("dch");
+        caja.style.marginRight = "50px";
+      }
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Ejercicio 4
+
+    document.getElementById("b").addEventListener("click", tirar);
+    document.getElementById("p").addEventListener("click", sacar);
+
+    function tirar(event) {
+        let p = document.getElementById('p').setAttribute('src','img/bp.PNG')
+        let b = document.getElementById('b').style.visibility = 'hidden'
+    }
+    function sacar(event) {
+        let p = document.getElementById('p').setAttribute('src','img/p.PNG')
+        let b = document.getElementById('b').style.visibility = 'visible'
+    }
+  </script>
+</html>
